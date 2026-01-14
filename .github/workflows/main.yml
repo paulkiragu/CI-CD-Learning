@@ -1,11 +1,11 @@
-name: My first CI pipeline
+name: My First CI Pipeline
 
 on: [push]
 
 jobs:
   explore-github-actions:
-  runs-on: ubuntu-latest
-  steps:
-  - run: echo "the job  was triggered by a ${{ github.event_name }} event."
-  - run: echo "this job is now running on a ${{ runner.os }} server hosted by Github!"
-  - run: echo "this job's status is ${{ job.status }}."
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered by a ${{ github.event_name }} event."
+      - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "This job's status is ${{ job.status }}."
