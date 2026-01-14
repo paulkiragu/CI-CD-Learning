@@ -6,8 +6,17 @@ jobs:
   explore-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The job was triggered by a ${{ github.event_name }} event."
-      - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "This job's status is ${{ job.status }}."
-      - name: Simulate a crash
-        run: exit 1
+      - name: Check python Version
+        run: python3 --version
+
+      - name: Run a "Test"
+        run: |
+          echo "Testing logic..."
+          if [ 1 -eq 1 ]; then
+           echo " Math works! Test passed."
+           exit 0
+          else
+           echo "Math is broken."
+           exit 1
+          fi
+    
