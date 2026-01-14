@@ -1,4 +1,4 @@
-def add_numbers(a,b):
+def add_numbers(a, b):
   return a + b
   print("Running the application...")
   result = add_numbers(5, 5)
