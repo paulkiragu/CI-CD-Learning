@@ -1,22 +1,16 @@
-name: My First CI Pipeline
+name: Python Application Test
 
 on: [push]
 
 jobs:
-  explore-github-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check python Version
-        run: python3 --version
+  build-and-test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout Code
+       uses: actions/checkout@v3
 
-      - name: Run a "Test"
-        run: |
-          echo "Testing logic..."
-          if [ 1 -eq 1 ]; then
-           echo " Math works! Test passed."
-           exit 0
-          else
-           echo "Math is broken."
-           exit 1
-          fi
-    
+     - name: Check Python Version
+       run: python3 --version
+
+     - name: Run the App
+       run: python3 app.py
